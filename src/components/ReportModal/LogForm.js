@@ -108,7 +108,7 @@ function LogForm(props) {
           </div>
           <div className="flex justify-end mt-4 mb-4">
             <div className="text-red-500 font-semibold text-sm ">
-              <h1>Bonus Recieved</h1>
+              <h1>Bonus Recievable</h1>
               <p className="text-right font-bold">₦{logFormState.bonus}</p>
             </div>
           </div>
