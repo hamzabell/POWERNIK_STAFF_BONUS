@@ -5,7 +5,6 @@ import { Global } from "./styled";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useTokenContext, useGlobalContext } from "./context";
-import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
 import "react-dropdown/style.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import axios from "axios";

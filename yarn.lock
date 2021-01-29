@@ -1733,8 +1733,7 @@
     "@svgr/plugin-svgo" "^5.4.0"
     loader-utils "^2.0.0"
 
-"@tailwindcss/postcss7-compat@^2.0.2", tailwindcss@>=1.9.6, "tailwindcss@npm:@tailwindcss/postcss7-compat":
-  name "@tailwindcss/postcss7-compat"
+"@tailwindcss/postcss7-compat@^2.0.2", "tailwindcss@npm:@tailwindcss/postcss7-compat":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@tailwindcss/postcss7-compat/-/postcss7-compat-2.0.2.tgz#49cb21703dfb4447620fceab5cef3285cff8c69d"
   integrity sha512-KM8kjG5dd8qoXBX2a6r3r1TOqhFh8NtFBheG9qpVPwSjrD8wRdoM7s+Xz56HEA1XmeN64gEKqjmY6vm55DiS3Q==
@@ -11052,14 +11051,6 @@ react-loader-spinner@^3.1.14:
   dependencies:
     babel-runtime "^6.26.0"
     prop-types "^15.7.2"
-
-react-minimal-side-navigation@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/react-minimal-side-navigation/-/react-minimal-side-navigation-1.5.1.tgz#3297c28dd4aad97aa8bed4f48722041d874362a7"
-  integrity sha512-SJuvzXhkSRtIcHspCCan9oJOLGM7Kdcu6pGERR4i6Ufp8YWH/fLs3jCjdIohrDZWvKvE0HNC5giUmZBFOCeJTQ==
-  dependencies:
-    "@babel/runtime" "^7.12.1"
-    tailwindcss ">=1.9.6"
 
 react-modal@^3.12.1:
   version "3.12.1"
