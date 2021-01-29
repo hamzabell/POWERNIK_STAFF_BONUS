@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { LoginPage, Dashboard, ReportDetails, Report, Logout } from "./pages";
 import { Global } from "./styled";
 import { ToastContainer } from "react-toastify";
