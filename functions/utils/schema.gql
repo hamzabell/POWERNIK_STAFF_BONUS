@@ -1,0 +1,33 @@
+type User {
+  email: String!
+  password: String!
+}
+type Name {
+  title: String!
+  first: String!
+  last: String!
+}
+
+type Picture {
+  large: String!
+  medium: String!
+  thumbnail: String!
+}
+type Staff {
+  gender: String!
+  name: Name!
+  email: String!
+  phone: String!
+  picture: Picture!
+}
+
+type Bonus {
+  dateCreated: String!
+  staff: Staff
+  bonus: String!
+}
+type Query {
+  allUsers: [User!]!
+  allStaffs: [Staff!]!
+  allBonuses: [Bonus!]!
+}
