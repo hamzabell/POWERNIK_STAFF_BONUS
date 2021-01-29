@@ -28,22 +28,25 @@ function StaffDetails(props) {
   const [staffBonus, setStaffBonus] = useState(STAFF_REPORT_INITIAL_STATE);
 
   useEffect(() => {
-    toast.info("😊 Data is being generated");
-
     const firstName = location.pathname.split("/").splice(-1)[0];
-    if (state.staffs) {
+    console.log(state.staffs);
+    if (state.staffs !== null) {
       const data = _.filter(
         state.staffs,
         (staff) => staff.name.first === firstName
       );
-      const staff = data[0];
-
-      axios
-        .get("/api/get-bonuses", { params: { staff: staff._id } })
-        .then((res) => {
-          return res.data;
-        })
-        .then((data) => setStaffBonus({ staff, bonus: data.bonusData }));
+      if (data.length !== 0) {
+        const staff = data[0];
+        axios
+          .get("/api/get-bonuses", { params: { staff: staff._id } })
+          .then((res) => {
+            toast.info("😊 Data is being generated");
+            return res.data;
+          })
+          .then((data) => setStaffBonus({ staff, bonus: data.bonusData }));
+      } else {
+        setStaffBonus({ staff: "DOES_NOT_EXIST", bonus: "NO_BONUSES" });
+      }
     }
   }, [state.staffs]);
 
@@ -59,9 +62,16 @@ function StaffDetails(props) {
   return (
     <ComponentWrapper>
       <div className="flex p-5 mt-20 md:mt-0 shadow-sm bg-white rounded-lg">
-        {staffBonus.staff === null ? (
+        {staffBonus.staff === null || staffBonus.staff === "DOES_NOT_EXIST" ? (
           <div className="flex text-xl justify-center items-center w-full">
-            Loading Staff Data...
+            {staffBonus.staff !== "DOES_NOT_EXIST" ? (
+              <p>Loading Staff Data...</p>
+            ) : (
+              <p>
+                😪 We have thoroughly searched our Database "
+                {location.pathname.split("/").splice(-1)[0]}" does not exist
+              </p>
+            )}
           </div>
         ) : (
           <>
@@ -147,9 +157,13 @@ function StaffDetails(props) {
         )}
       </div>
       <div className="flex p-12 shadow-sm bg-white mt-4 rounded-lg">
-        {staffBonus.bonus === null ? (
+        {staffBonus.bonus === null || staffBonus.bonus === "NO_BONUSES" ? (
           <div className="flex text-xl justify-center items-center w-full">
-            Getting Bonus Report...
+            {staffBonus.staff !== "DOES_NOT_EXIST" ? (
+              <p>Getting Bonus Report...</p>
+            ) : (
+              <p>No Bonus Report</p>
+            )}
           </div>
         ) : (
           <div className="flex flex-col text-lg  w-full">
