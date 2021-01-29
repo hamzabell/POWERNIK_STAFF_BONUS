@@ -33,7 +33,7 @@ function StaffDetails(props) {
     if (state.staffs !== null) {
       const data = _.filter(
         state.staffs,
-        (staff) => staff.name.first === firstName
+        (staff) => staff.name.first.toLowerCase() === firstName.toLowerCase()
       );
       if (data.length !== 0) {
         const staff = data[0];
